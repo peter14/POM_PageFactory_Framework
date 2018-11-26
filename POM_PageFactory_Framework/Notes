@@ -1,0 +1,28 @@
+To install JAR files for command prompts
+-------------------------------------------------------------------------------------------
+mvn install:install-file -Dfile=C:\selenium-server-standalone-3.14.0.jar 
+-DgroupId=org.seleniumhq.selenium -DartifactId=selenium-java -Dversion=3.14.0 
+-Dpackaging=jar
+
+To purge and download the jar file (delete old jar and download new file from maven repo
+-------------------------------------------------------------------------------------------
+mvn dependency:purge-local-repository
+
+
+------------------------------------------------
+scheduler code:
+---------------------------------------------
+@echo on
+SET PROJECT_PATH=C:\Users\peter\Desktop\Selenium\Data_Driven_Framework\POM_PageFactory_Framework
+
+cd /C %PROJECT_PATH%
+
+call mvn clean
+call mvn test
+
+pause
+
+------------------------------------------------------------------------------------
+Built-in TestNG xml file will be created eventhough if you din't create the xml file 
+------------------------------------------------------------------------------------
+Built-in path : C:\Users\peter\AppData\Local\Temp\testng-eclipse--756605517
